@@ -32,6 +32,16 @@ public class MenuScreen {
 		panel.add(calcButton);
 		panel.add(piggybankButton);
 		cp.add(BorderLayout.CENTER, panel);
+
+		// listeners
+		piggybankButton.addActionListener( e -> {
+			var piggybank = new PiggyBankSimulator(window);
+			// clear the window and show calculator
+			window.getContentPane().removeAll();
+			piggybank.init();
+			// window.pack();
+			window.revalidate();
+		});
 	}
 	
 }
