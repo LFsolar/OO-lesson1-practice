@@ -34,12 +34,21 @@ public class MenuScreen {
 		cp.add(BorderLayout.CENTER, panel);
 
 		// listeners
-		piggybankButton.addActionListener( e -> {
-			var piggybank = new PiggyBankSimulator(window);
+		calcButton.addActionListener(e -> {
+			var calc = new CalcSimulator(window);
 			// clear the window and show calculator
 			window.getContentPane().removeAll();
+			calc.init();
+			window.pack();
+			window.revalidate();
+		});
+
+		piggybankButton.addActionListener( e -> {
+			var piggybank = new PiggyBankSimulator(window);
+			// clear the window and show piggybank
+			window.getContentPane().removeAll();
 			piggybank.init();
-			// window.pack();
+			window.pack();
 			window.revalidate();
 		});
 	}
