@@ -64,6 +64,15 @@ public class PiggyBankSimulator {
 		PBbuttons[2] = new JButton("Stats");
 		PBbuttons[2].addActionListener(new PBStatsListener(this));
 		PBbuttons[3] = new JButton("Exit");
+		// exit button returns to menu
+		PBbuttons[3].addActionListener(e -> {
+			window.getContentPane().removeAll();
+			var menu = new MenuScreen(window);
+			menu.init(); // Bring back menu screen
+			window.pack();
+			window.revalidate();
+		});
+
 		JPanel buttonPanel = new JPanel();
 		for (var e: PBbuttons) {
 			buttonPanel.add(e);
