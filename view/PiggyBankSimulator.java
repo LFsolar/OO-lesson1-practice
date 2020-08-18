@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -12,7 +13,9 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import control.PBInsertListener;
 import model.Coin;
+import model.PiggyBank;
 
 public class PiggyBankSimulator {
 
@@ -20,6 +23,7 @@ public class PiggyBankSimulator {
 	JTextArea display = new JTextArea();
 	private JRadioButton[] radioButtons;
 	private JButton[] PBbuttons;
+	private PiggyBank piggyBank = new PiggyBank();
 	
 	public PiggyBankSimulator(JFrame window) {
 		this.window = window;
@@ -49,16 +53,34 @@ public class PiggyBankSimulator {
 		// buttons
 		PBbuttons = new JButton[4];
 		PBbuttons[0] = new JButton("Insert");
+		PBbuttons[0].addActionListener(new PBInsertListener(this));
 		PBbuttons[1] = new JButton("History");
 		PBbuttons[2] = new JButton("Stats");
 		PBbuttons[3] = new JButton("Exit");
+		JPanel buttonPanel = new JPanel();
+		for (var e: PBbuttons) {
+			buttonPanel.add(e);
+		}
 
 		// south panel
 		JPanel southPanel = new JPanel();
+		southPanel.setLayout(new GridLayout(2,1));
 		southPanel.add(radioPanel);
+		southPanel.add(buttonPanel);
 
 		cp.add(BorderLayout.CENTER, display);
 		cp.add(BorderLayout.SOUTH, southPanel);
 	}
+
+	public JRadioButton[] getRadioButtons() {
+		return radioButtons;
+	}
+
+	public PiggyBank getPiggyBank() {
+		return piggyBank;
+	}
 	
+	public JTextArea getDisplay() {
+		return display;
+	}
 }
