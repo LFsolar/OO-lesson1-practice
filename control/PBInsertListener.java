@@ -19,8 +19,10 @@ public class PBInsertListener implements ActionListener {
 		// find which radio is selected
 		String buttonLabel = "";
 		for (var r: panel.getRadioButtons()) {
-			buttonLabel = r.getText();
-			break;
+			if (r.isSelected()) {
+				buttonLabel = r.getText();
+				break;
+			}
 		}
 		int value = 0;
 		switch(buttonLabel) {
@@ -34,5 +36,7 @@ public class PBInsertListener implements ActionListener {
 
 		// Panel displays info
 		String m = panel.getDisplay().getText();
+		panel.getDisplay().setText(m + "\nInserted: " + c
+			+ " | " + panel.getPiggyBank());
 	}
 }

@@ -15,4 +15,15 @@ public class Coin {
 	public int getValue() {
 		return value;
 	}
+
+	@Override
+	public String toString() {
+		String name = "N/A";
+		switch(value) {
+			case 5: name = Coin.NICKEL; break;
+			case 10: name = Coin.DIME; break;
+			case 25: name = Coin.QUARTER; break;
+		}
+		return name;
+	}
 }

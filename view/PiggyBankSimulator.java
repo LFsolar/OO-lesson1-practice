@@ -38,9 +38,12 @@ public class PiggyBankSimulator {
 			JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setPreferredSize(new Dimension(500,500));
 
+		cp.add(BorderLayout.CENTER, scrollPane);
+
 		// radio buttons
 		radioButtons = new JRadioButton[3];
 		radioButtons[0] = new JRadioButton(Coin.NICKEL);
+		radioButtons[0].setSelected(true);
 		radioButtons[1] = new JRadioButton(Coin.DIME);
 		radioButtons[2] = new JRadioButton(Coin.QUARTER);
 		ButtonGroup radioGroup = new ButtonGroup();
@@ -68,7 +71,6 @@ public class PiggyBankSimulator {
 		southPanel.add(radioPanel);
 		southPanel.add(buttonPanel);
 
-		cp.add(BorderLayout.CENTER, display);
 		cp.add(BorderLayout.SOUTH, southPanel);
 	}
 
