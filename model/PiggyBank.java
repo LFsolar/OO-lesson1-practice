@@ -26,4 +26,7 @@ public class PiggyBank {
 			+ coinHistory.size();
 	}
 	
+	public ArrayList<Coin> getCoinHistory() {
+		return coinHistory;
+	}
 }

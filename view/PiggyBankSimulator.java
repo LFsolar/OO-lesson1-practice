@@ -13,7 +13,9 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import control.PBHistoryListener;
 import control.PBInsertListener;
+import control.PBStatsListener;
 import model.Coin;
 import model.PiggyBank;
 
@@ -58,7 +60,9 @@ public class PiggyBankSimulator {
 		PBbuttons[0] = new JButton("Insert");
 		PBbuttons[0].addActionListener(new PBInsertListener(this));
 		PBbuttons[1] = new JButton("History");
+		PBbuttons[1].addActionListener(new PBHistoryListener(this));
 		PBbuttons[2] = new JButton("Stats");
+		PBbuttons[2].addActionListener(new PBStatsListener(this));
 		PBbuttons[3] = new JButton("Exit");
 		JPanel buttonPanel = new JPanel();
 		for (var e: PBbuttons) {
