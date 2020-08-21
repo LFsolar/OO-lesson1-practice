@@ -61,5 +61,7 @@ public class CalcSimulator {
 		southPanel.add(row2);
 		southPanel.add(row3);
 		cp.add(BorderLayout.SOUTH, southPanel);
+
+		// button listeners
 	}
 }
