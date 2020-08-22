@@ -12,6 +12,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import controller.ButtonClickListener;
+
 public class CalcSimulator {
 
 	private JFrame window;
@@ -63,5 +65,46 @@ public class CalcSimulator {
 		cp.add(BorderLayout.SOUTH, southPanel);
 
 		// button listeners
+		// detect when any button is clicked
+		// this = CalculatorSimulator
+		ButtonClickListener buttonClickListener
+			= new ButtonClickListener(this);
+		// attach listener to all buttons
+		exitButton.addActionListener(buttonClickListener);
+	}
+
+	public JTextArea getDisplay() {
+		return display;
+	}
+
+	public JButton getEnterButton() {
+		return enterButton;
+	}
+
+	public JButton getAddButton() {
+		return addButton;
+	}
+
+	public JButton getSubButton() {
+		return subButton;
+	}
+
+	public JButton getMulButton() {
+		return mulButton;
+	}
+
+	public JButton getDivButton() {
+		return divButton;
+	}
+
+	public JButton getResultRutton() {
+		return resultButton;
+	}
+
+	public JButton getExitButton() {
+		return exitButton;
+	}
+	public JFrame getWindow() {
+		return window;
 	}
 }
