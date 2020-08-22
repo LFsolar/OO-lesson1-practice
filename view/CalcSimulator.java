@@ -13,9 +13,11 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import controller.ButtonClickListener;
+import model.Calculator;
 
 public class CalcSimulator {
 
+	private Calculator calculator = new Calculator();
 	private JFrame window;
 	private JTextArea display = new JTextArea();
 	private JTextField numField = new JTextField(10);
@@ -71,6 +73,12 @@ public class CalcSimulator {
 			= new ButtonClickListener(this);
 		// attach listener to all buttons
 		exitButton.addActionListener(buttonClickListener);
+		enterButton.addActionListener(buttonClickListener);
+		resultButton.addActionListener(buttonClickListener);
+		addButton.addActionListener(buttonClickListener);
+		subButton.addActionListener(buttonClickListener);
+		mulButton.addActionListener(buttonClickListener);
+		divButton.addActionListener(buttonClickListener);
 	}
 
 	public JTextArea getDisplay() {
@@ -97,7 +105,7 @@ public class CalcSimulator {
 		return divButton;
 	}
 
-	public JButton getResultRutton() {
+	public JButton getResultButton() {
 		return resultButton;
 	}
 
@@ -106,5 +114,13 @@ public class CalcSimulator {
 	}
 	public JFrame getWindow() {
 		return window;
+	}
+
+	public JTextField getNumField() {
+		return numField;
+	}
+
+	public Calculator getCalculator() {
+		return calculator;
 	}
 }

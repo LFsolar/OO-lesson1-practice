@@ -13,9 +13,9 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import control.PBHistoryListener;
-import control.PBInsertListener;
-import control.PBStatsListener;
+import controller.PBHistoryListener;
+import controller.PBInsertListener;
+import controller.PBStatsListener;
 import model.Coin;
 import model.PiggyBank;
 
